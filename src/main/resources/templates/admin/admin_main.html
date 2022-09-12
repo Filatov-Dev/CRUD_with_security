@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+</head>
+<body>
+<!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+<table border="1" width="220" height="60">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Last name</th>
+    <th>Age</th>
+    <th>Role</th>
+  </tr>
+  <tr>
+
+    <td th:utext="${user.getId()}"></td>
+    <td th:utext="${user.getUsername()}"></td>
+    <td th:utext="${user.getLastName()}"></td>
+    <td th:utext="${user.getAge()}"></td>
+    <td th:utext="${user.getRoles()}"></td>
+
+  </tr>
+</table>
+<br>
+<br>
+<a th:href="@{/admin/all}">All users page</a>
+<br>
+<a href="new.html"> Create new user</a>
+<br>
+<br>
+<br>
+<form th:action="@{/logout}" th:method="POST">
+  <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>
